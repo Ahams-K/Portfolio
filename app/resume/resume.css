@@ -1,0 +1,255 @@
+/* app/resume/resume.css */
+
+/* --- Layout & Background --- */
+.resume-wrapper {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 100px 20px 40px;
+    color: #333;
+}
+
+.resume-container-width {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Titles & Tabs --- */
+.resume-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.resume-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.resume-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.resume-tab {
+    padding: 12px 30px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.resume-tab:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.resume-tab.active {
+    background: white;
+    color: #667eea;
+}
+
+/* --- Content Containers --- */
+.resume-content {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.resume-header-bar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.country-flag {
+    font-size: 3em;
+}
+
+/* --- The Resume Paper (What gets printed) --- */
+.resume-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+    background: #fafafa;
+}
+
+.resume-paper {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    font-size: 11pt;
+    line-height: 1.5;
+
+    /* FORCE TEXT COLOR RESET */
+    color: #333333 !important;
+}
+
+/* --- Typography Inside Paper --- */
+.resume-paper h1 {
+    color: #111827 !important; /* Nearly black */
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: left;
+    text-shadow: none;
+    font-weight: 800;
+}
+
+.resume-paper h2 {
+    color: #667eea !important; /* Keep the blue accent */
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 8px;
+    margin: 20px 0 15px 0;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.resume-paper p,
+.resume-paper li,
+.resume-paper span,
+.resume-paper div {
+    color: #374151 !important; /* Dark Gray for readability */
+}
+
+/* --- Sections --- */
+.profile-section {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.photo-placeholder {
+    width: 120px;
+    height: 150px;
+    background: #f3f4f6; /* Light gray instead of gradient for print */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666 !important;
+    font-size: 0.85em;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-details {
+    color: #4b5563 !important;
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+/* --- Lists & items --- */
+.resume-paper ul {
+    margin-left: 20px;
+    margin-top: 8px;
+    list-style-type: disc;
+    color: #374151 !important;
+}
+
+.resume-paper li {
+    margin-bottom: 5px;
+}
+
+.project-item h3,
+.experience-item h3,
+.education-item h3 {
+    color: #111827 !important;
+    font-size: 1.05em;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.meta {
+    color: #6b7280 !important; /* Medium gray */
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* --- Skills Grid --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skill-item {
+    background: #f3f4f6 !important; /* Force light gray bg */
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-left: 3px solid #667eea;
+    font-size: 0.95em;
+    color: #1f2937 !important; /* Dark text for skills */
+}
+
+.skill-item strong {
+    color: #4f46e5 !important; /* Indigo for labels */
+}
+
+/* --- UI Helpers (Not printed usually) --- */
+.key-differences {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 3px solid #667eea;
+    color: #333;
+}
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.diff-item {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    color: #333;
+}
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: #856404;
+}
+
+/* === PDF GENERATION OVERRIDES === */
+/* These rules ensure that when the HTML is captured, it ignores your dark mode global variables */
+.resume-paper * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
