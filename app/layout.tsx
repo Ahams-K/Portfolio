@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // <-- IMPORT THIS
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({
@@ -22,10 +23,19 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth">
-        <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        {children}
+        <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[#0a0a0a]`}>
+        <Navbar />
+
+        <main
+            id="main-content"
+            className="transition-transform duration-300 ease-in-out relative z-10"
+        >
+            {children}
+        </main>
+
+        <Footer /> {/* <-- ADD FOOTER HERE */}
+
         <Analytics />
-        <SpeedInsights />
         </body>
         </html>
     );

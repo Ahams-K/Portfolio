@@ -12,25 +12,30 @@ export default function Experience() {
 
             <div className="space-y-12">
 
-                {/* Item 1: Your University as a "Job" */}
+                {/* Item 1: University as Professional Training */}
                 <div className="group border-l-2 border-white/10 pl-8 hover:border-green-500 transition-colors duration-300">
-                    <h3 className="text-2xl font-bold text-white">Software Engineering Student</h3>
+                    <h3 className="text-2xl font-bold text-white">Applied Computer Science Student</h3>
                     <p className="text-green-400 font-mono text-sm mb-4">Karel de Grote University College • 2023 - Present</p>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 leading-relaxed marker:text-green-500">
-                        <li>Specializing in full-stack development and embedded systems design.</li>
-                        <li>Lead Developer for the "Eval E-Bike" project, managing a team of 4 students.</li>
-                        <li>Completed intensive coursework in Data Structures, Algorithms, and Distributed Systems.</li>
-                    </ul>
-                </div>
 
-                {/* Item 2: Any Leadership or Hackathons */}
-                <div className="group border-l-2 border-white/10 pl-8 hover:border-green-500 transition-colors duration-300">
-                    <h3 className="text-2xl font-bold text-white">Freelance & Open Source</h3>
-                    <p className="text-green-400 font-mono text-sm mb-4">Self-Employed • 2023 - Present</p>
-                    <ul className="list-disc list-inside text-gray-400 space-y-2 leading-relaxed marker:text-green-500">
-                        <li>Building custom web solutions for local clients using React and Tailwind CSS.</li>
-                        <li>Active contributor to GitHub repositories focused on AI and machine learning tools.</li>
-                        <li>Continuously upskilling in modern frameworks like Next.js 14 and Spring Boot.</li>
+                    <p className="text-gray-400 mb-4 leading-relaxed">
+                        Intensive 3-year bachelor's program focused on enterprise software engineering, cloud architecture, and artificial intelligence.
+                        Acting as a full-time engineer on semester-long projects simulating real-world production environments.
+                    </p>
+
+                    <h4 className="text-white font-bold mt-6 mb-2">Key Focus Areas:</h4>
+                    <ul className="list-disc list-inside text-gray-400 space-y-3 leading-relaxed marker:text-green-500">
+                        <li>
+                            <strong className="text-gray-200">Distributed Systems & Cloud:</strong> Designing microservices architectures using Spring Boot and Docker, focusing on scalability and fault tolerance.
+                        </li>
+                        <li>
+                            <strong className="text-gray-200">AI & Machine Learning:</strong> Building predictive models and reinforcement learning agents (Deep Q-Learning) using Python, PyTorch, and TensorFlow.
+                        </li>
+                        <li>
+                            <strong className="text-gray-200">Data Engineering:</strong> Implementing ETL pipelines and managing complex database schemas with PostgreSQL and NoSQL (MongoDB, Neo4j).
+                        </li>
+                        <li>
+                            <strong className="text-gray-200">Embedded Systems:</strong> optimizing C++ code for hardware constraints and real-time processing on microcontrollers.
+                        </li>
                     </ul>
                 </div>
 
