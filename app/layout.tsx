@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // <-- IMPORT THIS
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -31,6 +32,8 @@ export default function RootLayout({
         >
             {children}
         </main>
+
+        <Footer /> {/* <-- ADD FOOTER HERE */}
 
         <Analytics />
         </body>
