@@ -8,16 +8,18 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
 
-    // 1. SCROLL SPY LOGIC (Highlights current section)
+    // Check if we're on an article page
+    const isArticlePage = pathname?.startsWith('/thoughts/');
+
+    // 1. SCROLL SPY LOGIC (Highlights current section) - only on homepage
     useEffect(() => {
         if (pathname !== '/') return;
         const handleScroll = () => {
-            const sections = ['about', 'experience', 'projects', 'contact'];
+            const sections = ['about', 'experience', 'projects', 'thoughts', 'contact'];
             const current = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
                     const rect = element.getBoundingClientRect();
-                    // Active if section is near top of screen
                     return rect.top >= 0 && rect.top <= 300;
                 }
                 return false;
@@ -33,10 +35,8 @@ export default function Navbar() {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
             if (isMobileMenuOpen) {
-                // Push content down by 320px
                 mainContent.style.transform = 'translateY(320px)';
             } else {
-                // Reset content position
                 mainContent.style.transform = 'translateY(0)';
             }
         }
@@ -48,12 +48,13 @@ export default function Navbar() {
         { name: 'About', href: '/#about' },
         { name: 'Experience', href: '/#experience' },
         { name: 'Work', href: '/#projects' },
+        { name: 'Thoughts', href: '/#thoughts' },
         { name: 'Contact', href: '/#contact' },
     ];
 
     return (
         <>
-            {/* MAIN NAVBAR STRIP */}
+            {/* MAIN NAVBAR STRIP - Always shows full navigation */}
             <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-white/10 bg-black/80 transition-all duration-300">
                 <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center relative z-[60]">
 
@@ -66,7 +67,7 @@ export default function Navbar() {
                         &lt;KA/&gt;
                     </Link>
 
-                    {/* DESKTOP MENU */}
+                    {/* DESKTOP MENU - Always visible */}
                     <div className="hidden md:flex items-center gap-8">
                         <ul className="flex items-center gap-8 text-sm font-mono text-gray-400">
                             {navLinks.map((link) => (
@@ -91,6 +92,7 @@ export default function Navbar() {
                         </Link>
                     </div>
 
+                    {/* Mobile Menu Button */}
                     <div className="flex items-center gap-4 md:hidden">
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -111,7 +113,22 @@ export default function Navbar() {
                 </div>
             </nav>
 
+            {/* BACK BUTTON BAR - Only shows on article pages, below main navbar */}
+            {isArticlePage && (
+                <div className="fixed top-16 left-0 w-full z-40 backdrop-blur-md bg-black/60 border-b border-white/5">
+                    <div className="max-w-6xl mx-auto px-6 py-3">
+                        <Link
+                            href="/#thoughts"
+                            className="inline-flex items-center gap-2 text-gray-400 hover:text-green-400 transition-colors group"
+                        >
+                            <span className="text-lg group-hover:-translate-x-1 transition-transform">←</span>
+                            <span>Back to Thoughts</span>
+                        </Link>
+                    </div>
+                </div>
+            )}
 
+            {/* Mobile Menu Dropdown */}
             <div
                 className={`
                     fixed top-16 left-0 w-full bg-[#0a0a0a] border-b border-white/10 shadow-2xl z-40
@@ -125,7 +142,6 @@ export default function Navbar() {
                         key={link.name}
                         href={link.href}
                         onClick={closeMobileMenu}
-                        // Added Dynamic Active Styling Here!
                         className={`
                             text-xl font-mono transition-colors font-medium tracking-wide
                             ${activeSection === link.href.substring(2) ? 'text-white font-bold' : 'text-gray-400 hover:text-green-400'}

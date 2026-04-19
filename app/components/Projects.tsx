@@ -85,21 +85,24 @@ export default function Projects() {
                 <div className="group border border-white/10 bg-white/5 p-8 rounded-2xl hover:border-green-500/50 hover:bg-white/10 transition-all duration-300 flex flex-col">
                     <div className="mb-auto">
                         <h3 className="font-bold text-2xl font-mono text-white group-hover:text-green-400 transition-colors">
-                            RealEstate Management
+                            Traksys MCP
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1 mb-4 font-mono">Enterprise Resource Management</p>
+                        <p className="text-sm text-gray-500 mt-1 mb-4 font-mono">Natural Language MES Interface</p>
 
                         <p className="text-gray-400 text-base leading-relaxed mb-6">
-                            A centralized property management system for real estate agencies.
-                            Streamlines the workflow between agents and property listings, allowing for efficient
-                            CRUD operations and agent-property assignment.
+                            A natural language query interface built on top of the Traksys Manufacturing Execution System (MES).
+                            Enables plant managers and executives to ask complex production questions in plain English
+                            and instantly receive root-cause analysis, replacing hours of manual SQL joins and debugging.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mt-4">
-                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">Java</span>
-                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">Spring Framework</span>
-                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">JavaScript</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">Langfuse</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">Python</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">PostgreSQL</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">SQL</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">SQL Server</span>
+                        <span className="text-xs font-mono bg-black/50 border border-white/10 px-3 py-1 rounded-full text-green-400">OpenWeb-ui</span>
                     </div>
                 </div>
 
