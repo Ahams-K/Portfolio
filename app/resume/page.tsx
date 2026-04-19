@@ -15,7 +15,6 @@ export default function ResumePage() {
     const downloadPDF = async () => {
         setIsGenerating(true);
         try {
-            // @ts-ignore
             const html2pdf = (await import('html2pdf.js')).default;
             const element = document.getElementById('main-resume');
 
@@ -124,6 +123,21 @@ export default function ResumePage() {
                                 {/* PROJECTS */}
                                 <div className="mb-6">
                                     <h2 style={{ fontSize: '1.1rem', textTransform: 'uppercase', borderBottom: '1px solid #ccc', paddingBottom: '5px', marginBottom: '10px', color: '#000' }}>Projects</h2>
+
+                                    <div className="project-item" style={{ marginBottom: '15px' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                            <strong>MCP Server for Traksys MES – Natural Language Production Intelligence</strong>
+                                            <span style={{ fontStyle: 'italic' }}>2026</span>
+                                        </div>
+                                        <ul style={{ paddingLeft: '20px', fontSize: '0.95rem', marginTop: '5px' }}>
+                                            <li>Designed and developed a Natural Language Interface (MCP Server) on top of Traksys Manufacturing Execution System (MES) to enable non-technical users to query live production data using plain English.</li>
+                                            <li>Implemented semantic search and context-aware query understanding to translate natural language into optimized database queries.</li>
+                                            <li>Built a semantic layer that automatically handles complex SQL joins, table relationships, and downtime analysis across production lines, sensors, maintenance schedules, and logs.</li>
+                                            <li>Reduced query time from ~2 hours of manual SQL writing/debugging to under 10 seconds, dramatically improving operational decision-making for plant managers and executives.</li>
+                                            <li>Integrated React frontend with real-time dashboard visualization and demonstrated the system in team presentations, showcasing instant root-cause analysis for production line failures.</li>
+                                            <li>Technologies: Next.js, TypeScript, SQL (PostgreSQL/SQL Server), semantic querying, API development.</li>
+                                        </ul>
+                                    </div>
 
                                     {/* 1. BanditGames */}
                                     <div className="project-item" style={{ marginBottom: '15px' }}>
