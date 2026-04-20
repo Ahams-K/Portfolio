@@ -135,7 +135,6 @@ export default function ResumePage() {
                                             <li>Built a semantic layer that automatically handles complex SQL joins, table relationships, and downtime analysis across production lines, sensors, maintenance schedules, and logs.</li>
                                             <li>Reduced query time from ~2 hours of manual SQL writing/debugging to under 10 seconds, dramatically improving operational decision-making for plant managers and executives.</li>
                                             <li>Integrated React frontend with real-time dashboard visualization and demonstrated the system in team presentations, showcasing instant root-cause analysis for production line failures.</li>
-                                            <li>Technologies: Next.js, TypeScript, SQL (PostgreSQL/SQL Server), semantic querying, API development.</li>
                                         </ul>
                                     </div>
 
